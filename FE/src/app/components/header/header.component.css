@@ -1,0 +1,30 @@
+ .header {
+    background: #095E4E;
+    color: white;
+ }
+ .fill-remaining-space {
+   /* This fills the remaining space, by using flexbox. 
+      Every toolbar row uses a flexbox row layout. */
+   flex: 1 1 auto;
+ }
+ a.logo{
+    text-decoration: none;
+    color: white;
+ }
+ button{
+    background-color: #095E4E ;
+    color:white ;
+    width: 180px;
+    text-align: center;
+    -webkit-transition-duration: 0.6s; /* Safari */
+    transition-duration: 0.6s;
+   
+ }
+ button:hover {
+    background-color: rgb(62, 161, 143) ;
+  }
+  ::ng-deep .mat-menu-content {
+    width: 200px;
+      background-color: #095E4E;
+   }
+ 

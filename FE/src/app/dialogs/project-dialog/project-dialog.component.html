@@ -1,0 +1,78 @@
+<h1 mat-dialog-title> Projekt hinzufügen </h1>
+<form [formGroup]="addProjectForm" (ngSubmit)="addProjectSubmit()">
+    <div mat-dialog-content>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="form-group col col-md-12">
+                    <label>ProjektID</label>
+                    <input type="number" class="form-control" formControlName="ProjektID"
+                    [ngClass]="{ 'is-invalid': submitted && addProject.ProjektID.errors }">
+                  <div *ngIf="submitted && addProject.ProjektID.errors" class="invalid-feedback">
+                    <div *ngIf="addProject.ProjektID.errors.required">ProjektID ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                
+                <div class="form-group col col-md-12">
+                    <label>Name</label>
+                    <input type="text" class="form-control" formControlName="Name"
+                    [ngClass]="{ 'is-invalid': submitted && addProject.Name.errors }">
+                  <div *ngIf="submitted && addProject.Name.errors" class="invalid-feedback">
+                    <div *ngIf="addProject.Name.errors.required">Name ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                    <label>Mitarbeiter</label>
+                    <input type="text" class="form-control" formControlName="Mitarbeiter"
+                    [ngClass]="{ 'is-invalid': submitted && addProject.Mitarbeiter.errors }">
+                  <div *ngIf="submitted && addProject.Mitarbeiter.errors" class="invalid-feedback">
+                    <div *ngIf="addProject.Mitarbeiter.errors.required">Mitarbeiter ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                    <label>Kunde</label>
+                    <input type="text" class="form-control" formControlName="Kunde"
+                    [ngClass]="{ 'is-invalid': submitted && addProject.Kunde.errors }">
+                  <div *ngIf="submitted && addProject.Kunde.errors" class="invalid-feedback">
+                    <div *ngIf="addProject.Kunde.errors.required">Kunde ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                
+                <div class="form-group col col-md-12">
+                    <label>Kosten</label>
+                    <input type="number" class="form-control" formControlName="Kosten"
+                    [ngClass]="{ 'is-invalid': submitted && addProject.Kosten.errors }">
+                  <div *ngIf="submitted && addProject.Kosten.errors" class="invalid-feedback">
+                    <div *ngIf="addProject.Kosten.errors.required">Kosten ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                    <label>Projektstart</label>
+                    <input type="date" class="form-control" formControlName="Projektstart"
+                    [ngClass]="{ 'is-invalid': submitted && addProject.Projektstart.errors }">
+                  <div *ngIf="submitted && addProject.Projektstart.errors" class="invalid-feedback">
+                    <div *ngIf="addProject.Projektstart.errors.required">Projektstart ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                    <label>Projektende</label>
+                    <input type="date" class="form-control" formControlName="Projektende"
+                    [ngClass]="{ 'is-invalid': submitted && addProject.Projektende.errors }">
+                  <div *ngIf="submitted && addProject.Projektende.errors" class="invalid-feedback">
+                    <div *ngIf="addProject.Projektende.errors.required">Projektende ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <div class="row" style="width: 100%;">
+          <span >
+            <button mat-raised-button type="button" (click)="onCancelClick()">Abbrechen</button>
+            <button mat-raised-button type="submit" color="accent" >Speichern</button>
+          </span>
+        </div>
+      </div>
+
+</form>

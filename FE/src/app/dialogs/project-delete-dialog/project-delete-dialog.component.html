@@ -1,0 +1,15 @@
+<!-- <h4 mat-dialog-title  >Warnung !</h4> -->
+
+<div mat-dialog-content>
+    <h4>Sind Sie sicher, dass Sie dieses Projekt löschen möchten? </h4>
+
+  </div>
+  <div mat-dialog-actions style="width: 100%">
+    <span style="margin-left: auto;">
+      <button mat-button mat-dialog-close (click)="onCancelClick()" >Abbrechen</button>
+      <button mat-button class="deleteBtn" (click)="deleteProjekt()">Löschen</button>
+    </span>
+  </div>
+
+
+

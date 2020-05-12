@@ -1,0 +1,106 @@
+<div class="container">
+  <div class="row ">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto text-center">
+    </div>
+  </div>
+  <div class="row my-7">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <p-toast [style]="{marginTop: '80px'}"></p-toast>
+        <div class="card card-signin my-3">
+          <div class="card-body">
+              <h2 class="card-title text-center">Anmeldung</h2>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                   <label >E-Mail Adresse</label>
+                   <input type="email" [class.is-invalid]="loginForm.get('email').invalid && loginForm.get('email').touched"  class="form-control" formControlName="email" >
+                   <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched ">
+                     <small *ngIf="loginForm.get('email').errors?.required" class="text-danger">E-Mail Adresse ist ein Pflichtfeld</small>
+                     <div *ngIf="loginForm.get('email').errors.email" class="text-danger">Die E-Mail-Adresse muss eine gültige E-Mail-Adresse sein.</div>
+                   </div>
+                </div>
+                <div class="form-group">
+                  <label>Kennwort</label>
+                  <input type="password" [class.is-invalid]="loginForm.get('password').invalid && loginForm.get('password').touched" class="form-control" formControlName="password">
+                  <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+                    <small *ngIf="loginForm.get('password').errors?.required" class="text-danger" >Kennwort ist ein Pflichtfeld</small>
+                  </div>
+                </div>
+                <button [disabled]="!loginForm.valid || loading" class="btn btn-primary"  type="submit" class="button" >
+                  <div *ngIf="loading" class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                  </div>
+                  Anmelden
+                </button>
+              </form>
+              
+          </div>
+          <a  align="right" [routerLink]="['registrieren']" style="color:white">Registrieren</a>
+          <a  align="right" [routerLink]="['kennwort-vergessen']" style="color:white">Kennwort vergessen?</a>
+        </div>
+
+        
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row" *ngIf="!anmeldstatus">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label>Account Name</label>
+      <input
+        type="text"
+        class="form-control">
+        <label>Passwort</label>
+        <input
+          type="text"
+          class="form-control">
+    </div>
+    <button
+      class="btn btn-primary"
+      >
+      Anmelden
+    </button>
+    <button
+      class="btn btn-primary"
+      (click)="anmeldstatus=!anmeldstatus"
+      >
+      Registieren
+    </button>
+  </div>
+</div>
+
+
+
+<div class="row" *ngIf="anmeldstatus">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <div class="form-group">
+      <label>Account Name</label>
+      <input
+        type="text"
+        class="form-control">
+        <label>Neues Passwort</label>
+        <input
+          type="text"
+          class="form-control">
+          <label>Passwort wiederholen</label>
+          <input
+            type="text"
+            class="form-control">
+    </div>
+    <div class="form-group">
+      <select class="form-control" #status>
+        <option value="Kunde">Kunde</option>
+        <option value="Abteilungsleiter">Abteilungsleiter</option>
+        <option value="Admin">Admin</option>
+      </select>
+    </div>
+    <button
+      class="btn btn-primary"
+      >
+      Add Account
+    </button>
+  </div>
+</div> -->

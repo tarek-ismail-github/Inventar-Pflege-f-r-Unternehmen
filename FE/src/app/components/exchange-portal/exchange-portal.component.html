@@ -1,0 +1,112 @@
+<h1>File Upload</h1>
+
+
+    <input type="file" (change)="onFileChange($event)" />
+    <button type="button" (click)="onSubmit()">Upload</button>
+
+<!-- <div class="container-fluid">
+
+  <div class="row">
+    <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="row card">
+          <div class="col-sm-12">
+            <h4>Upload Section</h4>
+            <div id="fileSelector">
+                <input type="file" (change)="onFileSelected($event)" >
+                <button type="button" (click)="onUpload()">Upload</button>
+                <button type="button" (click)="onSubmit()">Submit</button>
+
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="container-fluid">
+  <div class="row pt-3">
+    <div class="col col-md-4 p-3">
+      <h5>CSV Datei verwaltung</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2 col-lg-2">
+    <div class="row pt-3">
+      <mat-nav-list >
+        <mat-list-item>
+          <a  mat-raised-button (click)="openExchangeDialog()"><i class="fa fa-plus"></i>&nbsp; Hinzufügen</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a  mat-raised-button (click)="rowsSelected()" [disabled]="!rowsSelected()"><i class="fa fa-pencil-alt"></i>&nbsp; Bearbeiten</a>
+        </mat-list-item>
+        <mat-list-item>
+          <a  mat-raised-button (click)="rowsSelected() " [disabled]="!rowsSelected()"><i
+              class="fa fa-trash"></i>&nbsp; Löschen</a>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+  </div>
+    <div  class="col-md-8 col-lg-10" style="border-left: 1.5px solid #095E4E ;">
+      <ag-grid-angular #agGrid style="width: 100%;" class="ag-theme-material"
+        [rowSelection]="rowSelection" 
+        [rowData]="rowData" 
+        [columnDefs]="columnDefs" 
+        [defaultColDef]="defaultColDef"
+        [pagination]="true" 
+        [paginationAutoPageSize]="true"
+        [localeText]="localeText"
+        [floatingFilter]="true"
+        [animateRows]="true"
+        (gridReady)="onGridReady($event)">
+      </ag-grid-angular>
+    </div>
+  </div>
+</div>
+ -->
+
+<!-- <div class="container-fluid">
+    <div class="row justify-content-md-center p-1" >
+      <div class="col col-md-8 p-3" >
+        
+        <button mat-raised-button class="mainBTN"
+         (click)="addFile()">Datei Hinzufugen
+        </button>
+      </div>
+      
+      
+      <div class="col-md-auto" ></div>
+     
+    </div>
+    
+    <div class="row" >
+      
+    </div>
+  
+    <div class="row">
+        <div class="col">
+            
+        </div>
+      <div class="col-5">
+        <mat-card class="example-card" *ngFor="let file of fileData">
+          <mat-card-header>
+           <mat-card-title>{{ file.fileName }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              Dateigröße: {{ file.fileSize }}
+            </p>
+            <button (click)="downloadFile(file.fileName)" class="btn btn-link">Download</button> &nbsp;
+             <button (click)="editDesc(file)" class="btn btn-link">
+               Bearbeiten</button> &nbsp;
+             <button (click)="deleteFile(file)" class="btn btn-link" >
+                Löschen</button>
+          </mat-card-content>
+        
+        </mat-card>
+      </div>
+      <div class="col">
+            
+      </div>
+    </div>
+  </div> -->

@@ -1,0 +1,21 @@
+ag-grid-angular{
+    height: 98vh;
+    height: -moz-calc(98vh - (165px));
+    height: -webkit-calc(98vh - (165px));
+    height: calc(98vh - (165px));
+}
+.UnternehmenField{
+    width: 400px;
+    text-align: center;
+    text-decoration-color: #095E4E ;
+}
+ .mat-raised-button {
+    background-color: #095E4E ;
+    color:white;
+    width: 200px;
+    min-width: unset;
+    
+  }
+  .mat-raised-button:hover{
+    background-color: rgb(62, 161, 143) ;
+  } 

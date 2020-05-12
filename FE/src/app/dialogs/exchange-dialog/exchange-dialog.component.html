@@ -1,0 +1,67 @@
+<!-- add file Form -->
+<h1 mat-dialog-title> CSV hinzufügen </h1>
+<form [formGroup]="addFileForm" (ngSubmit)="addFileSubmit()">
+    <div mat-dialog-content>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="form-group col col-md-12">
+                    <label>ID</label>
+                    <input type="text" class="form-control" formControlName="ID"
+                    [ngClass]="{ 'is-invalid': submitted }">
+                </div>
+                <div class="form-group col col-md-12">
+                  <label>Datei auswählen</label>
+                    <input type="file" id="File"formControlName="File" (change)="onFileSelected($event)" >
+                    <!-- <button type="button" (click)="onUpload()">Upload</button> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <div class="row" style="width: 100%;">
+          <span >
+            <button mat-raised-button type="button" (click)="onCancelClick()">Abbrechen</button>
+            <button mat-raised-button type="submit" color="accent" >Speichern</button>
+          </span>
+        </div>
+      </div>
+
+</form>
+<!-- <div class="container">
+  <h1 mat-dialog-title *ngIf="!data.uuid"> Datei hinzufügen </h1>   
+    <form [formGroup]="addFileForm" (ngSubmit)="onSubmit()">
+      <div mat-dialog-content>
+        <div class="col col-md-12" *ngIf="data">
+          <p>
+          <b>Dateiname :</b>  {{ data.fileName }}
+          </p>
+  
+        </div>
+  
+        <div class="form-group col col-md-12">
+          <mat-form-field>
+            <textarea maxlength="500" matInput class="form-control" formControlName="desc" placeholder="Dateibeschreibung" rows="5"></textarea>
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group col col-md-12" *ngIf="!data.uuid">
+            <p-fileUpload  #fileUpload name="myfile[]"  customUpload="true" (uploadHandler)="onUpload($event)" [auto]="true" maxFileSize="1000000000">
+              <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                </ul>
+            </ng-template>
+            </p-fileUpload>
+        </div>
+        </div>
+        <div mat-dialog-actions>
+          <div class="row" style="width: 100%;">
+            <span style="margin-left: auto;">
+              <button mat-raised-button type="button" (click)="onCancelClick()">Abbrechen</button>
+              <button mat-raised-button type="submit">Speichern</button>
+            </span>
+          </div>
+      </div>
+    </form>
+  </div> -->

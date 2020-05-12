@@ -1,0 +1,49 @@
+<h1 mat-dialog-title> Assest hinzufügen </h1>
+<form [formGroup]="addAssestForm" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content>
+    <div class="container-fluid">
+      <div class="row pt-3">
+        <div class="form-group col col-md-12">
+          <label>Name des Assets</label>
+            <input type="text" class="form-control" formControlName="AssestName"
+            [ngClass]="{ 'is-invalid': submitted && addAssest.AssestName.errors }">
+          <!-- <div *ngIf="submitted && addAssest.AssestName.errors" class="invalid-feedback">
+            <div *ngIf="addAssest.AssestName.errors.required">Name ist ein Pflichtfeld</div>
+          </div> -->
+        </div>
+        <div class="">
+           <button type="button" class="btn btn-secondary btn-sm m-2" (click)="addAttribut()">add Attribut</button>
+          <hr>
+          <div class="form-group col-sm-6">
+            <label>Attribut name</label>
+            <div formArrayName="AttributName" *ngFor="let name of AttributName.controls; let i = index;">
+              <input type="text" class="form-control my-1" [formControlName] ="i" >
+            </div>
+          </div>
+          <div class="form-group  col-sm-6">
+            <label>Attribut Type</label>
+            <div formArrayName="DatenType" *ngFor="let type of DatenType.controls; let i = index;">
+              <select type="text" class="form-control my-1" [formControlName] ="i" >
+                <option >String</option>
+                <option >Integer</option>
+                <option >Numeric</option>
+                <option >Text</option>
+                <option >Date</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-actions>
+    <div class="row" style="width: 100%;">
+      <span >
+        <button mat-raised-button type="button" (click)="onCancelClick()">Abbrechen</button>
+        <button mat-raised-button type="submit" color="accent" >Speichern</button>
+      </span>
+    </div>
+  </div>
+
+</form>
+{{addAssestForm.value | json}}

@@ -1,0 +1,12 @@
+.col > * {
+    width: 102%;
+  }
+   span button{
+    background-color: #095E4E ;
+    color:white ;
+    width: 150px;
+
+  }
+  span{
+    margin-left: auto;
+  }

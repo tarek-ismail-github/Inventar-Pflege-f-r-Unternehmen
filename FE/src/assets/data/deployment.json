@@ -1,0 +1,9 @@
+[
+    {"Datum":	"Wed, 22 Jan 2020 00:00:00 GMT","DeployID":1,
+    "DurchfuehrenderMitarbeiter":"Tarek","InstallierteVersion":"3.0",
+    "ProjektID":4,"ServerID":2},
+    {"Datum":	"Wed, 22 Jan 2020 00:00:00 GMT","DeployID":4,
+        "DurchfuehrenderMitarbeiter":"Raphaeal","InstallierteVersion":"5.0",
+        "ProjektID":3,"ServerID":1}
+
+]

@@ -1,0 +1,40 @@
+
+<div class="container-fluid">
+  <div class="row pt-3">
+    <div class="col col-md-4 p-3">
+      <h5>Tabelleverwaltung</h5>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-md-2 col-lg-2">
+      <div class="row pt-3">
+        <mat-nav-list class="buttonlist" >
+          <mat-list-item>
+            <a  mat-raised-button (click)="openAssestDialog()"><i class="fa fa-plus"></i>&nbsp; Hinzufügen</a>
+          </mat-list-item>
+          <mat-list-item>
+            <a  mat-raised-button (click)="rowsSelected() && openAssestDeleteDialog()" [class.disabled]="!rowsSelected()"
+            > <i class="fa fa-trash"></i>&nbsp; Löschen</a>
+
+          </mat-list-item>
+        </mat-nav-list>
+      </div>
+    </div>
+    <div class="col-md-8 col-lg-10" style="border-left: 1.5px solid #095E4E ;">
+      <ag-grid-angular #agGrid style="width: 100%;" class="ag-theme-material"
+        [rowSelection]="rowSelection" 
+        [rowData]="rowData" 
+        [columnDefs]="columnDefs" 
+        [defaultColDef]="defaultColDef"
+        [pagination]="true" 
+        [paginationAutoPageSize]="true"
+        [localeText]="localeText"
+        [floatingFilter]="true"
+        [animateRows]="true"
+        (gridReady)="onGridReady($event)"
+        >
+
+      </ag-grid-angular>
+
+    </div>
+</div>

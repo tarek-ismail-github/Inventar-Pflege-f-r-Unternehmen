@@ -1,0 +1,75 @@
+<!-- add New User Form -->
+<h1 mat-dialog-title> Benutzer hinzufügen </h1>   
+    <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+      <div mat-dialog-content>
+        <div class="container-fluid">
+          <div class="row">
+
+              <div class="form-group col col-md-12">
+                  <label>Vorname</label>
+                  <input type="text" class="form-control" formControlName="firstName"
+                    [ngClass]="{ 'is-invalid': submitted && addUF.firstName.errors }">
+                  <div *ngIf="submitted && addUF.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="addUF.firstName.errors.required">Vorname ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                  <label>Nachname</label>
+                  <input type="text" class="form-control" formControlName="lastName"
+                    [ngClass]="{ 'is-invalid': submitted && addUF.lastName.errors }">
+                  <div *ngIf="submitted && addUF.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="addUF.lastName.errors.required">Nachname ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                  <label>E-Mail</label>
+                  <input type="email" class="form-control" formControlName="email"
+                    [ngClass]="{ 'is-invalid': submitted && addUF.email.errors }">
+                  <div *ngIf="submitted && addUF.email.errors" class="invalid-feedback">
+                    <div *ngIf="addUF.email.errors.required">Email ist ein Pflichtfeld</div>
+                    <div *ngIf="addUF.email.errors.email">Die E-Mail-Adresse muss eine gültige E-Mail-Adresse sein.</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12" *ngIf="!data.uuid">
+                  <label>Passwort</label>
+                  <input type="password" class="form-control" formControlName="password"
+                    [ngClass]="{ 'is-invalid': submitted && addUF.password.errors }">
+                  <div *ngIf="submitted && addUF.password.errors" class="invalid-feedback">
+                    <div *ngIf="addUF.password.errors.required">Passwort ist ein Pflichtfeld</div>
+                    <div *ngIf="addUF.password.errors.minlength">Das Passwort sollte mehr als 6 Buchstaben lang sein.</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12" *ngIf="!data.uuid">
+                  <label>Passwort bestätigen</label>
+                  <input type="password" class="form-control" formControlName="confirmPassword"
+                    [ngClass]="{ 'is-invalid': submitted && addUF.confirmPassword.errors }">
+                  <div *ngIf="submitted && addUF.confirmPassword.errors" class="invalid-feedback">
+                    <div *ngIf="addUF.confirmPassword.errors.required">Passwort bestätigen ist ein Pflichtfeld</div>
+                    <div *ngIf="addUF.confirmPassword.errors.mustMatch">Passwörter müssen übereinstimmen</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                  <label>Role</label>
+                  <div class="form-control">
+                    <input type="radio" value="ROLE_USER" name="role" formControlName="role"> &nbsp;
+                    <label for="User"> Benutzer </label>
+                    &nbsp; &nbsp;
+                    <input type="radio" value="ROLE_MANAGER" name="role" formControlName="role"> &nbsp;
+                    <label for="Manager"> Manager</label>
+                  </div>
+                </div>
+
+          </div>
+        </div>      
+    </div>
+    <div mat-dialog-actions>
+    <div class="row" style="width: 100%;">
+      <span >
+        <button mat-raised-button type="button" (click)="onCancelClick()">Abbrechen</button>
+        <button mat-raised-button type="submit" color="accent" >Speichern</button>
+      </span>
+    </div>
+  </div>
+</form>
+  
+<!-- add user form ends -->

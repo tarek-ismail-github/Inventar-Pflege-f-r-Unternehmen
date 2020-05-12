@@ -1,0 +1,67 @@
+<h1 mat-dialog-title> Deployment hinzufügen </h1>
+<form [formGroup]="addDeploymentForm" (ngSubmit)="addDeploymentSubmit()">
+    <div mat-dialog-content>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="form-group col col-md-12">
+                    <label>Datum</label>
+                    <input type="date" class="form-control" formControlName="Datum"
+                    [ngClass]="{ 'is-invalid': submitted && addDeployment.Datum.errors }">
+                  <div *ngIf="submitted && addDeployment.Datum.errors" class="invalid-feedback">
+                    <!-- <div *ngIf="addDeployment.Datum.errors.required">Datum ist ein Pflichtfeld</div> -->
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                    <label>DeployID</label>
+                    <input type="number" class="form-control" formControlName="DeployID"
+                    [ngClass]="{ 'is-invalid': submitted && addDeployment.DeployID.errors }">
+                  <div *ngIf="submitted && addDeployment.DeployID.errors" class="invalid-feedback">
+                    <div *ngIf="addDeployment.DeployID.errors.required">DeployID ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                    <label>DurchfuehrenderMitarbeiter</label>
+                    <input type="text" class="form-control" formControlName="DurchfuehrenderMitarbeiter"
+                    [ngClass]="{ 'is-invalid': submitted && addDeployment.DurchfuehrenderMitarbeiter.errors }">
+                  <div *ngIf="submitted && addDeployment.DurchfuehrenderMitarbeiter.errors" class="invalid-feedback">
+                    <div *ngIf="addDeployment.DurchfuehrenderMitarbeiter.errors.required">DurchfuehrenderMitarbeiter ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                    <label>InstallierteVersion</label>
+                    <input type="text" class="form-control" formControlName="InstallierteVersion"
+                    [ngClass]="{ 'is-invalid': submitted && addDeployment.InstallierteVersion.errors }">
+                  <div *ngIf="submitted && addDeployment.InstallierteVersion.errors" class="invalid-feedback">
+                    <div *ngIf="addDeployment.InstallierteVersion.errors.required">InstallierteVersion ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                    <label>ProjektID</label>
+                    <input type="number" class="form-control" formControlName="ProjektID"
+                    [ngClass]="{ 'is-invalid': submitted && addDeployment.ProjektID.errors }">
+                  <div *ngIf="submitted && addDeployment.ProjektID.errors" class="invalid-feedback">
+                    <div *ngIf="addDeployment.ProjektID.errors.required">ProjektID ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+                <div class="form-group col col-md-12">
+                    <label>ServerID</label>
+                    <input type="number" class="form-control" formControlName="ServerID"
+                    [ngClass]="{ 'is-invalid': submitted && addDeployment.ServerID.errors }">
+                  <div *ngIf="submitted && addDeployment.ServerID.errors" class="invalid-feedback">
+                    <div *ngIf="addDeployment.ServerID.errors.required">ServerID ist ein Pflichtfeld</div>
+                  </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <div class="row" style="width: 100%;">
+          <span >
+            <button mat-raised-button type="button" (click)="onCancelClick()">Abbrechen</button>
+            <button mat-raised-button type="submit" color="accent" >Speichern</button>
+          </span>
+        </div>
+      </div>
+
+</form>

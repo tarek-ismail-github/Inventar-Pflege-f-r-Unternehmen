@@ -1,0 +1,18 @@
+button{
+    background-color: #095E4E ;
+    color:white ;
+    width: 150px;
+}
+
+.deleteBtn{
+    background-color: red ;
+    color:white ;
+    min-width: unset;
+    
+  }
+  ag-grid-angular{
+    height: 100vh;
+    height: -moz-calc(100vh - (112px));
+    height: -webkit-calc(100vh - (112px));
+    height: calc(100vh - (112px));
+  }

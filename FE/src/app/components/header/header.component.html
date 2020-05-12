@@ -1,0 +1,31 @@
+<mat-toolbar class ="header">
+    <span><a class="logo" [routerLink]="['/login']">Asset Management von Unternehmen</a> </span>
+    <span class="fill-remaining-space"></span>
+    <span>
+        <button mat-button *ngIf="(authService.userState | async).user" [routerLink]="['/home']" routerLinkActive="active" >Startseite</button>
+        <button mat-button   [routerLink]="['/austausch']">CSV import</button>
+        <button mat-button [matMenuTriggerFor]="settings" >Übersicht</button>
+        <mat-menu #settings="matMenu" class="my-menu">
+
+            <button mat-menu-item routerLink="/deployment" routerLinkActive="active">Deployment</button>
+            <button mat-menu-item routerLink="/project" routerLinkActive="active" >Projekt</button>
+            <button mat-menu-item routerLink="/server" routerLinkActive="active">Server</button>
+            <button mat-menu-item routerLink="/praktikumsteilnehmer" routerLinkActive="active">Praktikumsteilnehmer</button>-->
+        </mat-menu>
+        <button mat-button routerLink="/newAssetType" routerLinkActive="active">Neuer Assettyp</button>
+        <button mat-button [matMenuTriggerFor]="setting" >Administration</button>
+        <mat-menu #setting="matMenu" class="my-menu">
+            <button mat-menu-item routerLink="/user" routerLinkActive="active">Nutzer</button>
+        </mat-menu>
+    </span>
+    <span class="fill-remaining-space"></span>
+    <span  >
+        <button mat-button *ngIf="currentUser" [matMenuTriggerFor]="userItems">{{currentUser}}</button>
+        <mat-menu #userItems="matMenu" >
+          <button mat-menu-item (click)="changePassword()">Passwort ändern</button>
+          <button mat-menu-item (click)="authService.logoutUser()" >Abmelden</button>
+          
+        </mat-menu>
+    </span>
+
+</mat-toolbar>

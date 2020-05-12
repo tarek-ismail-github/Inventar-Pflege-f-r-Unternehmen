@@ -1,0 +1,14 @@
+<app-header></app-header>
+<p-toast [style]="{marginTop: '80px'}" key="mainToast">
+    <ng-template let-message pTemplate="message">
+      <div>
+        <span class="ui-toast-icon pi"
+          [ngClass]="{'pi-info-circle': message.severity == 'info','pi-exclamation-triangle': message.severity == '', 'pi-times-circle': message.severity == 'error','pi-check': message.severity == 'success'}"></span>
+        <div class="ui-toast-message-text-content ng-tns-c5-12 ng-star-inserted">
+          <span class="ui-toast-summary" [innerHtml]="message.summary "></span>
+          <p class="ui-toast-detail" *ngIf="message.detail" [innerHtml]="message.detail "></p>
+        </div>
+      </div>
+    </ng-template>
+  </p-toast>  
+<router-outlet></router-outlet>

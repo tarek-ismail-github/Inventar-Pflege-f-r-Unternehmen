@@ -1,0 +1,89 @@
+button{
+  background-color: #095E4E ;
+  color:white ;
+  width: 180px;
+  text-align: center;
+  -webkit-transition-duration: 0.6s; /* Safari */
+  transition-duration: 0.6s;
+  padding-top: 10px;
+}
+.ddd{
+padding-top: 5px;
+
+}
+button:hover {
+  background-color: rgb(62, 161, 143) ;
+}
+ag-grid-angular{
+ height: 100vh;
+ height: -moz-calc(100vh - (112px));
+ height: -webkit-calc(100vh - (112px));
+ height: calc(100vh - (112px));
+}
+.space{
+ padding-right: 10px;
+ padding-top: 10px;
+}
+.buttonlist .mat-raised-button {
+ background-color: #095E4E ;
+ color:white;
+ width: 200px;
+ min-width: unset;
+ margin:10px;
+ 
+}
+.buttonlist .mat-raised-button:hover{
+ background-color: rgb(62, 161, 143) ;
+} 
+
+.mat-raised-button {
+ background-color: #095E4E ;
+ color:white;
+ width: 180px;
+ min-width: unset;
+ 
+}
+.mat-raised-button:hover{
+ background-color: rgb(62, 161, 143) ;
+} 
+
+
+/* .mainBTN{
+    background-color: #095E4E ;
+    color:white ;
+    width: 200px;
+
+  }
+
+  .example-card {
+    width: 800px;
+    margin: 20px;
+    background-color: #095E4E ;
+    color:white ;
+  }
+
+  .btn {
+    color: white;
+  }
+  .header-section{
+    height: 80px;
+    line-height: 80px;
+    color: beige;
+    background-color: rgb(46, 43, 43);
+    font-size: 24px;
+    padding-left: 20px;
+}
+
+.card{
+    background-color: white;
+    box-shadow:0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    color:black;
+    margin: 20px;
+    padding: 10px;
+}
+
+.uploadList{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+} */
